@@ -3,7 +3,7 @@ from flask import request
 from app.main.pessoa.pessoa_db import PessoaDb
 
 api = Namespace('Pessoa',description='Manutenção dados de pessoa')
-modelo = api.model('HomeModel', {
+modelo = api.model('PessoaModel', {
     'id': fields.Integer,
     'nome': fields.String,
     'endereco': fields.String
