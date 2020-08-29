@@ -2,7 +2,7 @@ from flask_restplus import Resource, Namespace, fields
 from flask import request
 from app.main.pessoa.pessoa_db import PessoaDb
 
-api = Namespace('Home',description='Home da API')
+api = Namespace('Pessoa',description='Manutenção dados de pessoa')
 modelo = api.model('HomeModel', {
     'id': fields.Integer,
     'nome': fields.String,
@@ -27,7 +27,7 @@ class PessoaIdController(Resource):
     @api.param('nome','Nome da pessoa')
     @api.param('endereco','Endereço da pessoa')
     def put(self, id:int):
-        return PessoaDb.alterar(int(id), request.args), 201
+        return PessoaDb.alterar(int(id), request.json), 201
 
     def delete(self, id:int):
         return PessoaDb.remover(int(id)), 200
