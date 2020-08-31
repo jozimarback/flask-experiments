@@ -1,6 +1,6 @@
 from flask import Flask, Blueprint
 from flask_restplus import Api
-from werkzeug.contrib.fixers import ProxyFix
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 from app.main.pessoa.pessoa_controller import api as home_ns
 
