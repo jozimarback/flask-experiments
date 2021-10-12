@@ -2,15 +2,15 @@ from flask_restplus import Resource, Namespace, fields
 from flask import request
 from app.main.pessoa.pessoa_db import PessoaDb
 
-api = Namespace('Pessoa',description='Manutenção dados de pessoa')
-modelo = api.model('PessoaModel', {
+api = Namespace('Person',description='Maintence of people data')
+modelo = api.model('PersonModel', {
     'id': fields.Integer,
-    'nome': fields.String,
-    'endereco': fields.String
+    'name': fields.String,
+    'address': fields.String
 })
 @api.route('/')
 class PessoaController(Resource):
-    @api.response(200, "Busca realizada com sucesso")
+    @api.response(200, "Found with success")
     def get(self):
         return PessoaDb.obter(), 200
     @api.expect(modelo)

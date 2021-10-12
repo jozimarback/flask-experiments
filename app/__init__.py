@@ -14,10 +14,10 @@ authorizations = {
         'name': "Authorization",
         'in': "header",
         'type': "apiKey",
-        'description': "Insira o seu Token JWT aqui!"
+        'description': "Insert your JWT Token here!"
     }
 }
-api = Api(app, title='Api Flask Experiments', version='1.0', description='Api de experimentos com python flask',prefix='/api', authorizations=authorizations)
+api = Api(app, title='Flask Experiments Api', version='1.0', description='Experiments with python flask',prefix='/api', authorizations=authorizations)
 
 
-api.add_namespace(home_ns, path='/pessoa')
+api.add_namespace(home_ns, path='/person')
