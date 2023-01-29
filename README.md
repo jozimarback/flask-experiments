@@ -26,6 +26,10 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+4. Run app
+```bash
+python -m flask run --host=0.0.0.0
+```
 
 
 ### Running on Docker
